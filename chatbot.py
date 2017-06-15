@@ -14,6 +14,10 @@ class Bot(object):
 
         if message == "yes":
             user.answer_yes()
+        elif message == "no":
+            user.answer_no()
+        elif message == "neutral":
+            user.answer_neutral()
 
         # Donne le message pour que l'utilisateur l'utilise
         user.give_message(message)
