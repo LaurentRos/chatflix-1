@@ -75,7 +75,9 @@ class Recommendation:
 
     # Pose une question à l'utilisateur
     def ask_question(self, user):
-        return "Aimes-tu " + choice(self.movies).title + " ?"
+        indice = randint(0, len(self.movies))
+        user.set_question(indice)
+        return "Aimes-tu " + self.movies[indice].title + " ?"
 
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
