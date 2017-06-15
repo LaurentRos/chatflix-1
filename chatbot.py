@@ -14,10 +14,13 @@ class Bot(object):
 
         if message == "yes":
             user.answer_yes()
+            print("Good Ratings : " + str(user.good_ratings))
         elif message == "no":
             user.answer_no()
+            print("Bad Ratings : " + str(user.bad_ratings))
         elif message == "neutral":
             user.answer_neutral()
+            print("Neutral Ratings : " + str(user.neutral_ratings))
 
         # Donne le message pour que l'utilisateur l'utilise
         user.give_message(message)
