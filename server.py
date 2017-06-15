@@ -3,6 +3,7 @@
 import os
 from flask import Flask, request, jsonify, send_from_directory
 from random import randint
+from recommendation import Recommendation
 
 import chatbot
 
@@ -19,7 +20,13 @@ def receive_message():
     input = "Incoming from %s: %s" % (sender, message)
     print(input.encode("utf-8"))
 
-    response = bot.respond_to(sender, message)
+    if message = "similarity" :
+        user_a = recommendation.users.values()[0]
+        user_b = recommendation.users.values()[1]
+        similarity = recommendation.get_similarity(user_a, user_b)
+        response = "Similarity : " + str(similarity)
+    else :
+        response = bot.respond_to(sender, message)
 
     output = "Outgoing to %s: %s" % (sender, response)
     print(output.encode("utf-8"))
