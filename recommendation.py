@@ -19,7 +19,6 @@ class Recommendation:
         # Dans la variables 'movies_list' se trouve les films populaires qui sont vus par les utilisateurs
         self.movies = load_movies()
         self.movies_list = []
-        self.binary_movies_list = ["le Seigneur des Anneaux", "Harry Potter"]
 
         # Importe la liste des notations
         # Dans le tableau 'ratings' se trouve un objet avec un attribut 'movie' contenant l'identifiant du film, un
