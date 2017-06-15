@@ -2,6 +2,7 @@
 
 from User import User
 from random import randint
+from random import choice
 
 import numpy as np
 from sklearn.cluster import KMeans
@@ -18,6 +19,7 @@ class Recommendation:
         # Dans la variables 'movies_list' se trouve les films populaires qui sont vus par les utilisateurs
         self.movies = load_movies()
         self.movies_list = []
+        self.binary_movies_list = ["le Seigneur des Anneaux", "Harry Potter"]
 
         # Importe la liste des notations
         # Dans le tableau 'ratings' se trouve un objet avec un attribut 'movie' contenant l'identifiant du film, un
@@ -74,11 +76,7 @@ class Recommendation:
 
     # Pose une question à l'utilisateur
     def ask_question(self, user):
-        random_int = randint(2,1)
-        if random_int = 0 :
-            return "J'aime les films. Vous aimez les films ? Aimes-tu le Seigneur des Anneaux ?"
-        else :
-            return "J'aime les films. Vous aimez les films ? Aimes-tu Harry Potter ?"
+        return "J'aime les films. Vous aimez les films ? Aimes-tu " + choice(self.binary_movies_list) + " ?"
 
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
