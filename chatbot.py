@@ -12,6 +12,9 @@ class Bot(object):
         # Enregistre l'utilisateur s'il n'existe pas déjà
         user = self.recommendation.register_user(sender)
 
+        if message == "yes":
+            user.answer_yes()
+
         # Donne le message pour que l'utilisateur l'utilise
         user.give_message(message)
 
